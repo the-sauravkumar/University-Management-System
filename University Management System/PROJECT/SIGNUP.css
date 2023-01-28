@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url('loginbackground.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.box{
+    width: 300px;
+    padding:30px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background:rgba(0, 0, 0, 0.2);
+    border-radius: 24px;
+}
+.box h1{
+    color:white;
+    text-align: center;
+    font-weight: 650;
+}
+#fName,#lName,#regn,.box input[type="password"]{
+    border:0;
+    background:none;
+    display: block;
+    margin:20px auto;
+    text-align: center;
+    border:3px solid #01060d;
+    color: white;
+    padding:14px 12px;
+    width: 220px;
+    outline:none;
+    border-radius: 24px;
+    transition: 0.25px;
+}
+#fname:focus,#lname:focus,#email:focus,.box input[type="password"]:focus{
+    width:270px;
+    border-color: #ffc400ec;
+}
+.box input[type="submit"]{
+    border:0;
+    background:none;
+    display: block;
+    margin:20px auto;
+    text-align: center;
+    border:3px solid #ffc400ec;
+    color: white;
+    padding:14px 12px;
+    outline:none;
+    border-radius: 24px;
+    transition: 0.25px;
+    cursor:pointer;
+}
+.box input[type="submit"]:hover{
+    background:#ffc400ec ;
+}

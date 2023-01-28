@@ -1,0 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+.container{
+    background-color:#ffff; 
+    margin:0px;
+    padding:0;
+    border:1px solid black;
+}
+.Top-1
+{
+    color:green;
+    font-weight: 800px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 7vh;
+    margin:8px;
+}
+nav
+{
+    background-color: rgb(78, 49, 146);
+    color:white;
+    width:100%;
+    padding:10px 0px;
+  overflow: hidden;
+}
+nav ul 
+{
+    font-size: 8vh;
+    
+    float:right;
+    
+}
+nav ul li
+{
+    
+    display: inline-flex;
+    margin:18px;
+}
+nav ul li a{
+    border-bottom: 0vh;
+    border-radius:10px;
+    font-size: 2.5vh;
+    padding:6px;
+    border-style: none;
+    border:1px solid rgb(253, 253, 253);
+    text-decoration:none;
+    color:white;
+    cursor:pointer;
+    position: relative;
+    top:4.5vh;
+}
+nav ul li a:hover{
+    color:rgb(225, 228, 40);
+    
+}
+.logo
+{
+   position: fixed;
+   margin-top: -72px;
+   margin-left: 21px;
+    
+}
+.logo_1
+{
+    position: fixed;
+   margin-top: -72px;
+   margin-left: 545px;
+}
+.left_sidebar_wrapper
+{
+    border:2px solid grey;
+     display: grid;
+     box-sizing: content-box;
+     background: rgba(247, 237, 237, 0.88);
+}
+.left-sidebar-profile
+{
+    clip-path: circle(4.50% at 2.38% 38.43%);
+}
+.name-of-student
+{
+    display:grid;
+    color:brown;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: -76px;
+    margin-left: 100px;
+   font-size: larger;
+}
+.details_of_loggedin_profile ul .student-details
+{
+    text-align: center;
+    list-style: none;
+    padding:5px;
+    margin:5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

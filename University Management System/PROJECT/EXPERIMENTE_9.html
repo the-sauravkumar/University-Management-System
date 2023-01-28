@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link
+        rel="stylesheet" href="experiment9.css">
+        <!-- --------FONT FAMILY:RAMRAJA---------- -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Ramaraja&display=swap" rel="stylesheet">
+        <!-- -----------FONT FAMILY JOSEFIN SANS----- -->
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+        <!-- ------------FONT FAMILY RED HAT MONO -->
+        <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap" rel="stylesheet"> 
+        <!-- -------FONT NOTO SERIF---------- -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap" rel="stylesheet"> 
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Project 9</title>
+    </head>
+    <style>
+        .currentTable,tr,th,td{
+            border:2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding:5px;
+        }
+       .tablehead{
+            background-color: aquamarine;
+            color:white;
+        }
+    </style>
+    <body>
+        <div class="sticky_navbar">
+            <header>
+                <nav>
+                    <ul>
+                        <li><img src="UMS.png" id="logo_1" type="image/png"></li>
+                        <li><img src="unilogo.png" id="logo" type="image/png"></li>
+                        <li><img src="UNINAME.png" id="logo_2" type="image/png"></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="C:\Users\Saurabh\Documents\PROJECT 9\timetable\timetable.html">Time Table</a></li>
+                        <li><a href="EXAMINATION.HTML">Examination</a></li>
+                        <li><a href="Forgotpass.html">Change Password</a></li>
+                        <li><a href="login.html">LogOut</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <br>
+        <section>
+            <main>
+                <div class="left-sidebar-profile">
+                    <img id="profileImg" src="profileimage.jpg">
+                    <span class="name-of-student">Saurav Kumar</span></div>
+                <div class="details_of_loggedin_profile">
+                    <ul id="details_of_student">
+                        <li>Roll No - RK21NDB77</li>
+                        <li>Section - K21ND</li>
+                        <li>
+                            Programme - P132-Y::B Tech (CSE)</li>
+                        <li>Book Issued From Library - 0</li>
+                        <br><br><br>
+                        <li>Have no fear of perfection — you'll never reach it.". Artists always struggle to give their clients the best of the best.</li>
+                        <br><br><br>
+                        Payment Due - 130000
+                        <br><br><br>
+                        Examination Fee - 6000
+                    </ul>
+                </div>
+                <div class="attendance_view_text">
+                    <span class="span_attendance">ATTENDANCE VIEW</span>
+                </div>
+                <div class="subjectwise_attendance_view"><br>
+                    <div class="progress">
+                        <span style="color:white;float:right;">60%</span>
+                        <div class="progress__fill"></div>
+                        <span class="progress__text">CSE326 : INTERNET PROGRAMMING LABORATORY</span>
+                    </div>
+                    <br>
+                    <div class="progress_2">
+                        <span style="color:white;float:right;">87%</span>
+                        <div class="progress__fill_2"></div>
+                        <span class="progress__text_2">CSE202 : OBJECT ORIENTED PROGRAMMING</span>
+                    </div>
+                    <br>
+                    <div class="progress_3">
+                        <span style="color:white;float:right">94%</span>
+                        <div class="progress__fill_3"></div>
+                        <span class="progress__text_3">ECE213 : DIGITAL ELECTRONICS</span>
+                    </div>
+                    <br>
+                    <div class="progress_4">
+                        <span style="color:white;float:right">82%</span>
+                        <div class="progress__fill_4"></div>
+                        <span class="progress__text">MTH166 : DIFFERENTIAL EQUATIONS AND VECTOR CALCULUS</span>
+                    </div>
+                    <br>
+                    <div class="progress_5">
+                        <span style="color:white;float:right;">77%</span>
+                        <div class="progress__fill_5"></div>
+                        <span class="progress__text_5">CHE110 : ENVIRONMENTAL STUDIES</span>
+                    </div>
+                    <br>
+                    <div class="progress_6">
+                        <span style="color:white;float:right;">61%</span>
+                        <div class="progress__fill_6"></div>
+                        <span class="progress__text_6">ECE216 : DIGITAL ELECTRONICS LABORATORY</span>
+                    </div>
+                    <br>
+                    <div class="progress_7">
+                        <span style="color:white;float:right;">90%</span>
+                        <div class="progress__fill_7"></div>
+                        <span class="progress__text_7">MEC107 : BASIC ENGINEERING MECHANICS</span>
+                    </div>
+                    <br>
+                    <div class="progress_8">
+                        <span style="color:white;float:right;">85%</span>
+                        <div class="progress__fill_8"></div>
+                        <span class="progress__text_8">PEL130 : ADVANCED COMMUNICATION SKILLS - I</span>
+                    </div>
+            </div>
+            <div class="current_time_table"><span class="txt_time_table">Today's Time Table</span></div>
+            <div class="current_time_table_details">
+                <table class="currentTable">
+                    <tr class="bg-info">
+                        <th class="tablehead">Time</th>
+                        <th class="tablehead">Course</th>
+                        <th class="tablehead">Room Number</th>
+                        <th class="tablehead">Attendance Status</th>
+                    </tr>
+                   <tbody id="myTable">
+
+
+                   </tbody>
+                   <script>
+  var today = new Date();
+var day = today.getDay();
+
+var daylist = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+if(daylist[day]=="Sunday")
+{
+    var myArray = [
+    {'Time':'09 - 10 AM','Course': '-','Room': '-','Att_Status': '-'},
+    {'Time':'10 - 11 AM','Course': '-','Room': '-','Att_Status': '-'},
+    {'Time':'12 - 01 PM','Course': '-','Room': '-','Att_Status': '-'},
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("myTable")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Time}</td>
+                <td>${data[0].Course}</td>
+                <td>${data[0].Room}</td>
+                <td>${data[0].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[1].Time}</td>
+                <td>${data[1].Course}</td>
+                <td>${data[1].Room}</td>
+                <td>${data[1].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[2].Time}</td>
+                <td>${data[2].Course}</td>
+                <td>${data[2].Room}</td>
+                <td>${data[2].Att_Status}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+else if(daylist[day]=="Monday")
+{
+    var myArray = [
+    {'Time':'09 - 10 AM','Course': 'CSE202','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'10 - 11 AM','Course': 'CSE202','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'12 - 01 PM','Course': 'MTH166','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'01 - 02 PM','Course': 'PEL130','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'03 - 04 PM','Course': 'ECE213','Room': '38-813','Att_Status': 'Not Marked'},
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("myTable")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Time}</td>
+                <td>${data[0].Course}</td>
+                <td>${data[0].Room}</td>
+                <td>${data[0].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[1].Time}</td>
+                <td>${data[1].Course}</td>
+                <td>${data[1].Room}</td>
+                <td>${data[1].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[2].Time}</td>
+                <td>${data[2].Course}</td>
+                <td>${data[2].Room}</td>
+                <td>${data[2].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[3].Time}</td>
+                <td>${data[3].Course}</td>
+                <td>${data[3].Room}</td>
+                <td>${data[3].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[4].Time}</td>
+                <td>${data[4].Course}</td>
+                <td>${data[4].Room}</td>
+                <td>${data[4].Att_Status}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+else if(daylist[day]=="Tuesday")
+{
+    var myArray = [
+    {'Time':'09 - 10 AM','Course': 'CSE202','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'10 - 11 AM','Course': 'CSE202','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'12 - 01 PM','Course': 'ECE213','Room': '38-813','Att_Status': 'Not Marked'},
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("myTable")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Time}</td>
+                <td>${data[0].Course}</td>
+                <td>${data[0].Room}</td>
+                <td>${data[0].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[1].Time}</td>
+                <td>${data[1].Course}</td>
+                <td>${data[1].Room}</td>
+                <td>${data[1].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[2].Time}</td>
+                <td>${data[2].Course}</td>
+                <td>${data[2].Room}</td>
+                <td>${data[2].Att_Status}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+else if(daylist[day]=="Wednesday")
+{
+    var myArray = [
+    {'Time':'09 - 10 AM','Course': 'CSE326','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'10 - 11 AM','Course': 'CSE326','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'12 - 01 PM','Course': 'CHE110','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'01 - 02 PM','Course': 'MTH166','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'03 - 04 PM','Course': 'ECE213','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'04 - 05 PM','Course': 'ECE213','Room': '38-813','Att_Status': 'Not Marked'},
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("myTable")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Time}</td>
+                <td>${data[0].Course}</td>
+                <td>${data[0].Room}</td>
+                <td>${data[0].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[1].Time}</td>
+                <td>${data[1].Course}</td>
+                <td>${data[1].Room}</td>
+                <td>${data[1].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[2].Time}</td>
+                <td>${data[2].Course}</td>
+                <td>${data[2].Room}</td>
+                <td>${data[2].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[3].Time}</td>
+                <td>${data[3].Course}</td>
+                <td>${data[3].Room}</td>
+                <td>${data[3].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[4].Time}</td>
+                <td>${data[4].Course}</td>
+                <td>${data[4].Room}</td>
+                <td>${data[4].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[5].Time}</td>
+                <td>${data[5].Course}</td>
+                <td>${data[5].Room}</td>
+                <td>${data[5].Att_Status}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+else if(daylist[day]=="Thursday")
+{
+    var myArray = [
+    {'Time':'10 - 11 AM','Course': 'PEL130','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'11 - 12 PM','Course': 'CSE202','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'01 - 02 PM','Course': 'MEC107','Room': '38-813','Att_Status': 'Not Marked'},
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("myTable")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Time}</td>
+                <td>${data[0].Course}</td>
+                <td>${data[0].Room}</td>
+                <td>${data[0].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[1].Time}</td>
+                <td>${data[1].Course}</td>
+                <td>${data[1].Room}</td>
+                <td>${data[1].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[2].Time}</td>
+                <td>${data[2].Course}</td>
+                <td>${data[2].Room}</td>
+                <td>${data[2].Att_Status}</td>
+                    <tr>`
+
+                table.innerHTML +=row
+}
+}
+else if(daylist[day]=="Friday")
+{
+    var myArray = [
+    {'Time':'09 - 10 AM','Course': 'PEL130','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'10 - 11 AM','Course': 'MTH166','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'12 - 01 PM','Course': 'CHE110','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'01 - 02 PM','Course': 'MEC107','Room': '38-813','Att_Status': 'Not Marked'},
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("myTable")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Time}</td>
+                <td>${data[0].Course}</td>
+                <td>${data[0].Room}</td>
+                <td>${data[0].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[1].Time}</td>
+                <td>${data[1].Course}</td>
+                <td>${data[1].Room}</td>
+                <td>${data[1].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[2].Time}</td>
+                <td>${data[2].Course}</td>
+                <td>${data[2].Room}</td>
+                <td>${data[2].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[3].Time}</td>
+                <td>${data[3].Course}</td>
+                <td>${data[3].Room}</td>
+                <td>${data[3].Att_Status}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+else if(daylist[day]=="Saturday")
+{
+    var myArray = [
+    {'Time':'09 - 10 AM','Course': 'MTH166','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'10 - 11 AM','Course': 'MEC107','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'12 - 01 PM','Course': 'ECE213','Room': '38-813','Att_Status': 'Not Marked'},
+    {'Time':'01 - 02 PM','Course': 'MEC107','Room': '38-813','Att_Status': 'Not Marked'},
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("myTable")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Time}</td>
+                <td>${data[0].Course}</td>
+                <td>${data[0].Room}</td>
+                <td>${data[0].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[1].Time}</td>
+                <td>${data[1].Course}</td>
+                <td>${data[1].Room}</td>
+                <td>${data[1].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[2].Time}</td>
+                <td>${data[2].Course}</td>
+                <td>${data[2].Room}</td>
+                <td>${data[2].Att_Status}</td>
+                </tr>
+                <tr>
+                <td>${data[3].Time}</td>
+                <td>${data[3].Course}</td>
+                <td>${data[3].Room}</td>
+                <td>${data[3].Att_Status}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+
+                   </script>
+                </table>
+            </div>
+            <div class="announcements"><span class="Anncmt">Announcements</span></div>
+            <div class="announcements_content">
+                <div class="annoucement-wrapper">
+                <script>
+  var today = new Date();
+var day = today.getDay();
+
+var daylist = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+if(daylist[day]=="Sunday")
+{
+    document.write("")
+}
+else if(daylist[day]=="Monday")
+{
+    document.write(`<pre><h1>Free Online Counseling Service from YourDOST for EXCELL community</h1><br><br>
+ 
+
+ Dear EXCELL community, <br>
+ 
+ We understand that some of you may be feeling anxious and worried in the current situation and It's only natural if you're feeling a bit overwhelmed.  <br>
+ 
+ You may have questions about career, relationships, work-life balance and even yourselves.<br>
+ 
+ With the COVID-19 pandemic having disrupted all our lives, the past few months have only raised more questions, maybe even overwhelmingly so  <br><br><br>
+ 
+  
+ 
+ In these challenging times, and with so many unsettling questions in mind, you may be in need of a friend who could give anonymous, unbiased, round the clock help.  <br>
+ 
+ Excell University is pleased to join hands with YourDOST, one of India's leading online and emotional wellness platforms, to ensure that you're at your happiest and brightest self all the time!    <br>
+ 
+ We also want to remind you that if you are indeed experiencing any kind of distress, expert counselors at YourDOST continue to be available 24x7, 365 days a year. <br> 
+ 
+ You can connect with their experts at any time and receive guidance and support.  <br><br><br>
+ 
+  
+ 
+ So,  how can you go about utilizing YourDOST's services for FREE ?  <br><br>  
+ 
+ Just follow these simple steps </pre> `)
+}
+else if(daylist[day]=="Tuesday")
+{
+    document.write(`<h1>Webinar: <b>How to conquer your fear of the unknown.<b></h1> <br><br>
+ 
+
+ Dear Students,<br><br><br>
+ 
+  
+ 
+ Think about your biggest goal.<br>
+ 
+ Why haven't you accomplished it yet?<br>
+ 
+ If you're like most people, the answer is: Because of Fear.<br><br><br> 
+ 
+  
+ 
+ Fear is the limiting factor stopping you from achieving what you really want.<br>
+ 
+ Fear distracts us and leads to make excuses.<br><br><br>
+ 
+  
+ 
+ Living a life in fear can affect your mind and body.<br>
+ 
+ Fear is the cause of stress, anxiety and depression.<br><br><br>
+ 
+  
+ 
+ It's time to face yours fears and learn how to overcome them.<br><br><br>
+ 
+  
+ 
+ Psychologists from the Division of Student Relationships, Department of Counseling & Happiness are conducting a webinar on How to conquer your fear of the unknown.<br><br><br>
+ 
+  
+ 
+ Come join us to learn how to overcome fear and live a happy life.`)
+}
+else if(daylist[day]=="Wednesday")
+{
+    document.write(`<pre><h1>Fee Notification</h1><br>
+<i>Fee Notification for 2022 Term 1</i><br><br>
+
+This is for the information of all concerned that fee for Term 1 of academic year 2022-23 has been made due in the student’s fee account. In this regard, kindly note the below stated points: The students should clear all their dues latest by 31 may 2022<br><br>
+
+
+For Online Mode use only university payment Gateway Link FEE DEPOSIT
+<br><br>
+
+1. If a student does not pay his/her fee and other dues before the start of term he/she will not be allowed to sit in the class and his/her attendance will be blocked till the payment of his/her fee dues. The students will be responsible for shortage of their attendance and academic loss.<br><br><br>
+
+Uploaded By:<br>
+Admin<br>
+Division of Accounts (LIT)<pre><br>`)
+}
+else if(daylist[day]=="Thursday")
+{
+    document.write(`<pre><h1>Feedback Survey on Internet and Wi Fi<h1><br>
+Division of Infotech is going to conduct an Online Feedback Surveys for the following:<br><br>
+
+1. Internet and Wi-Fi Feedback Survey 2022<br><br>
+
+This survey is being conducted to check the satisfaction level of the users and it will also assist us to further improve the overall standard of our services and resources.<br><br>
+
+A survey will be available from 26th April, 2022 onward and the last date for filling the survey will be 30th April,2022.<br><br>
+
+For online feedback survey, please follow the below-mentioned path:-<br><br>
+
+UMS Navigation-------->Feedback & Surveys-------->Online Survey<br><br>
+
+Uploaded By:<br>
+Admin<br>
+Division Of Infotech</pre>`)
+}
+else if(daylist[day]=="Friday")
+{
+    document.write(` <h1>Registration for State of the Art Seminar (SAS) of Ph.D. Scholars.</h1><br>
+This is in reference to the evaluation of State of the Art Seminar (SAS) which will be conducted tentatively from May 2022 onwards.<br><br><br><br>
+
+ 
+
+It is mandatory for all research scholars to clear SAS within two years from the date of registration otherwise their admission may be deemed as cancelled.<br><br><br><br>
+
+ 
+
+The key points for SAS evaluation are as follows:<br><br><br>
+
+ 
+
+a) To finalize the Title of the proposed research work.<br><br>
+
+b) To finalize the Objectives of the proposed research work.<br><br>
+
+c) To finalize the research methodology of the proposed research work.<br><br><br>
+
+ 
+
+I. The research scholars are required to follow the following three steps to be eligible for appearing in SAS.`)
+}
+else if(daylist[day]=="Saturday")
+{
+    document.write(`<pre><h1>Design Workshop on Solidworks</h1><br><br>
+ 
+Astrionics- a Student Chapter under Student Research and Project Cell is going to conduct a “Design Workshop on SOLIDWORKS''. A rare opportunity for the students to understand an industry wide used software for designing i.e. Solid works. A time to experience a software used by approximately 41,000 companies and sell more than 3.5 million licenses to design, simulate the required machinery parts.<br><br>
+
+Solid Works is a solid modeling computer-aided design (CAD) and computer-aided engineering (CAE) application published by Dassault Systèmes. The workshop will be based on understanding from the basics of software to simulate your machine parts. You will understand how impact full designing is in the real life industry and how it has changed the Mechanical, Aerospace, Mechatronics and Automobile sector.<br><br>
+
+This 3 days workshop will cover the important aspects for the design thinking and its implementation. The students who have all three days of attendance will be provided with the hard copy of the Certificate. On the third day, there will be a Competition on the basis of what you have learned in the previous sessions of the workshop and the position holders will be provided with goodies as a reward. Moreover the top performers will be getting a chance to work on real-life projects under Student Research and Project Cell.<br><br>
+
+Target Audience: Aerospace, Mechanical, Automobile and Mechatronics Students<br><br>
+
+Workshop Date- 21st April-23rd April,2022<br><br>
+
+Timing will be conveyed soon<br><br>
+
+Registration Cost :  250/-<br><br>
+
+Registration Link: https://tinyurl.com/swdesign101</pre>`)
+}
+
+                </script>
+                </div>
+            </div>
+            <div class="teacher_on_leave"><span class="ToL">Teacher on Leave</span></div>
+            <div class="teacher_holiday_details">
+                <div class="teacher-name-day">
+                    <table>
+                        <tr>
+                            <th class="teacher_heading">Name</th>
+                            <th class="teacher_heading">Time</th>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                        <tbody id="TeacherDetails">
+
+
+                        </tbody>
+                        <script>
+                             var today = new Date();
+var day = today.getDay();
+var date = today.getDate();
+
+var daylist = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+if(daylist[day]=="Sunday")
+{
+    var myArray = [
+    {'Name':'-','Time': '-'}
+    
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("TeacherDetails")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Name}</td>
+                <td>${data[0].Time}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+else if(daylist[day]=="Monday")
+{
+    var myArray = [
+    {'Name':'Surinder Kaur','Time': '01-02 PM'}
+    
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("TeacherDetails")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Name}</td>
+                <td>${data[0].Time}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+
+else if(daylist[day]=="Tuesday")
+{
+    var myArray = [
+    {'Name':'Dr. Shanky Saxena','Time': '12-01 PM'}
+    
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("TeacherDetails")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Name}</td>
+                <td>${data[0].Time}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+
+
+else if(daylist[day]=="Wednesday")
+{
+    var myArray = [
+    {'Name':'Makul Mahajan','Time': '09 - 10 AM'}
+    
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("TeacherDetails")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Name}</td>
+                <td>${data[0].Time}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+
+
+else if(daylist[day]=="Thursday")
+{
+    var myArray = [
+    {'Name':'Dr. Ravider Kataria','Time': '01 - 02 PM'}
+    
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("TeacherDetails")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Name}</td>
+                <td>${data[0].Time}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+
+else if(daylist[day]=="Friday")
+{
+    var myArray = [
+    {'Name':'Dr. Prasenjit Adak','Time': '12-01 PM'}
+    
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("TeacherDetails")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Name}</td>
+                <td>${data[0].Time}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+else if(daylist[day]=="Saturday")
+{
+    var myArray = [
+        {'Name':'Dr. Santosh Kumar Yadav','Time': '09-10 AM'}
+    
+ ]
+ buildTable(myArray)
+
+function buildTable(data){
+    var table = document.getElementById("TeacherDetails")
+
+    for(let i = 0 ; i < data.length ;i++)
+    var row = `<tr>
+                <td>${data[0].Name}</td>
+                <td>${data[0].Time}</td>
+                </tr>`
+
+                table.innerHTML +=row
+}
+}
+                        </script>
+            </div>
+            </div>
+        </main>
+    </body>
+</html>
